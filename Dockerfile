@@ -1,4 +1,4 @@
-FROM openjdk:21-slim
+FROM amazoncorretto:25-headless
 
 #Build Args
 ARG SERVICE_VERSION
