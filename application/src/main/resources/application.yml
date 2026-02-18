@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: sh-api-gateway
+  main:
+    web-application-type: reactive
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${com.new-horizon.api-gateway.keycloak.base}/realms/${KC_REALM}/protocol/openid-connect/certs
+logging:
+  pattern:
+    # Logging pattern containing traceId and spanId; no longer provided through Sleuth by default
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+  level:
+    org.apache.http.wire.*: DEBUG
+info:
+  app:
+    artifact: "@project.artifactId@"
+    name: "@project.name@"
+    version: "@project.version@"

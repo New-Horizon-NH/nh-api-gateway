@@ -1,0 +1,7 @@
+com:
+  smarthospital:
+    api-gateway:
+      sh-order-manager:
+        base: http://localhost:8080
+server:
+  port: 8090
